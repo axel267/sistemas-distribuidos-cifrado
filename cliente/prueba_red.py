@@ -10,13 +10,16 @@ from cliente.cliente_red import enviar_y_recibir_payload
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Uso: python prueba_red.py <ruta_imagen>")
+        print("Uso: python prueba_red.py <ruta_imagen> [ip_servidor]")
+        print("Ejemplo: python prueba_red.py imagen.png 192.168.1.100")
         sys.exit(1)
         
     ruta_imagen = sys.argv[1]
+    # Si pasan una IP como segundo argumento la usamos, si no, usamos localhost
+    ip_servidor = sys.argv[2] if len(sys.argv) > 2 else '127.0.0.1'
+    
     # Usamos la misma llave que acordó el equipo
     llave_equipo = b'sistemas_dist_26'
-    ip_servidor = '127.0.0.1'
     puerto = 65433
     
     print("\n--- INICIANDO CLIENTE COMPLETO ---")
