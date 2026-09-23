@@ -1,6 +1,6 @@
 import os
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
+from Cryptodome.Cipher import AES
+from Cryptodome.Util.Padding import pad, unpad
 
 class MotorCriptografico:
     def __init__(self, clave_secreta: bytes):
